@@ -1,0 +1,29 @@
+<<!DOCTYPE html>
+<html>
+<head>
+  <title>Task2</title>
+</head>
+<body>
+  <ul class="list">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  <script type="text/javascript">
+  /**
+   * Task 2: Refactor the following JavaScript to use just one eventListener
+   * rather than binding invididual event listeners to each list element
+   */
+  var list = document.querySelectorAll('.list li');
+  function logContent() {
+      console.log(this.innerHTML);
+  }
+  for (var i = 0; i < list.length; i++) {
+    var
+      list[i].addEventListener('click', logContent, false);
+  }
+  </script>
+</body>
+</html>

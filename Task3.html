@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task3</title>
+</head>
+<body>
+  <ul class="list2">
+    <li>Text</li>
+    <li>Text</li>
+    <li>Text</li>
+    <li>Text</li>
+    <li>Text</li>
+  </ul>
+
+  <script type="text/javascript">
+  /**
+   * Task 3: Inspect the output in the console from clicking an
+   * item from ".list2", each index is the same
+   * Explain why, and also fix the problem to log the correct index
+   */
+  var list2 = document.querySelectorAll('.list2 li');
+  for (var i = 0; i < list2.length; i++) {
+      list2[i].addEventListener('click', function () {
+        var ind = i;
+        console.log('My index:', ind);
+      }, false);
+  }
+  </script>
+</body>
+</html>

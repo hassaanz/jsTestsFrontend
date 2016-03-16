@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task10</title>
+</head>
+<body>
+  <form name="myForm" action="#" onsubmit="return validateForm()">
+    <label>
+        <input name="username" placeholder="Name" type="text" required>
+    </label>
+    <label>
+        <input name="email" placeholder="Email" type="email" required>
+    </label>
+    <button>Submit</button>
+  </form>
+  <script type="text/javascript">
+    /**
+     * Task 10: Write a simple validation script for the above form
+     * - If the required fields are not filled out, do not submit the form
+     * - If the email is invalid, do not submit the form
+     * - To validate the email, please call the validateEmail function
+     * - The form should be able to have more fields added to it and
+         still work, without changing the JavaScript
+       - The form doesn't need to post to a specific URL but please comment
+         inside the code to demonstrate where this would happen
+     */
+    function validateEmail(str) {
+      var regexp = /[a-z0-9!#$%&'*+/=?^_`{|}~.-]+@[a-z0-9-]+(\.[a-z0-9-]+)*/;
+      return regexp.test(str);
+    }
+    function validateForm() {
+      var form = document.querySelector("form[name='myForm']");
+      console.log(form);
+      var formElements = form.querySelectorAll('input');
+      for (var i=0; i<formElements.length; i++) {
+        var element = formElements[i];
+        if (element.required && element.value === '') {
+          return false;
+        }
+        if (element.name === 'email') {
+          return validateEmail(element.value);
+        }
+      }
+    }
+  </script>
+</body>
+</html>
